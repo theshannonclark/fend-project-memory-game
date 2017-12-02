@@ -1,5 +1,5 @@
 /**
-    Utils.js -- Miscellaneous utility functions
+ * Utils.js -- Miscellaneous utility functions
  */
 
 // Shuffle function from http://stackoverflow.com/a/2450976

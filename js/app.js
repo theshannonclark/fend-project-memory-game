@@ -1,5 +1,5 @@
 /**
-    app.js -- Main application script.
+ * app.js -- Main application script.
  */
 
 /* 

@@ -1,12 +1,10 @@
 /**
-    GameController.js -- Mediator between the model and the view
+ * GameController.js -- Mediator between the model and the view
  */
 
 /**
  * @description Controller class for memory game
  * @constructor
- * @param {string} title - The title of the book
- * @param {string} author - The author of the book
  */
 
 let GameController = function() {
@@ -14,7 +12,7 @@ let GameController = function() {
   this.board = new Board();
   this.boardView = new BoardView();
 
-  // Set up game board
+  // Render game board
   this.boardView.render(this.board.deck);
 
   // Event listeners

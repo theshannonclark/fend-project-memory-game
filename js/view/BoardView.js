@@ -1,11 +1,11 @@
 /**
-    BoardView.js -- Responsible for updating the view (DOM)
+ * BoardView.js -- Responsible for updating the view (DOM)
  */
 
  /**
- * @description View class for memory game board
- * @constructor
- */
+  * @description View class for memory game board
+  * @constructor
+  */
 
 let BoardView = function() {
   // Instance variables

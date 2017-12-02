@@ -1,5 +1,5 @@
 /**
-    Board.js -- Represents a game board
+ * Board.js -- Represents a game board
  */
 
 /**
