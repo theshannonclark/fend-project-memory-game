@@ -59,6 +59,16 @@ Board.prototype.won = function() {
   return this.matches.length == 8
 };
 
+Board.prototype.getStarRating = function() {
+  let rating = 1;
+  if (this.moves <= 12) {
+    rating = 3;
+  } else if (this.moves <= 17) {
+    rating = 2
+  }
+  return rating;
+}
+
 Board.prototype.getCardFace = function(index) {
   return this.deck[index].face;
 };

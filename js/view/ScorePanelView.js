@@ -19,15 +19,8 @@ ScorePanelView.prototype.render = function(moves) {
   this.$moves.text(moves);
 
   this.clearStars();
-
-  let stars = '';
-  if (moves <= 16) {
-    stars = this.getStars(3);
-  } else if (moves <= 24) {
-    stars = this.getStars(2);
-  } else {
-    stars = this.getStars(1);
-  }
+  let rating = this.model.getStarRating();
+  let stars = this.getStars(rating);
   this.$stars.append(stars);
 };
 
