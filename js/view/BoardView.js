@@ -11,7 +11,6 @@
 let BoardView = function(model) {
   // Instance variables
   this.$board = $('.deck');
-  this.$cards = [];
   this.model = model;
 };
 

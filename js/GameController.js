@@ -8,12 +8,8 @@
  */
 
 let GameController = function() {
-  // Instance variables
-  this.board = new Board();
-  this.boardView = new BoardView(this.board);
-
-  // Render game board
-  this.boardView.render(this.board.deck);
+  // Set up the board
+  this.initialize();
 
   // Event listeners
   let controllerThis = this;
@@ -24,4 +20,19 @@ let GameController = function() {
     let affectedCardsIndices = controllerThis.board.flip(cardIndex);
     controllerThis.boardView.updateCards(affectedCardsIndices);
   });
+
+  const $restart = $('.restart');
+  $restart.click(function(event) {
+    // Recreate the board on restart
+    controllerThis.initialize();
+  });
+};
+
+GameController.prototype.initialize = function() {
+  // Instance variables
+  this.board = new Board();
+  this.boardView = new BoardView(this.board);
+
+  // Render game board
+  this.boardView.render(this.board.deck);
 };
