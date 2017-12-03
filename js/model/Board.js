@@ -59,6 +59,10 @@ Board.prototype.won = function() {
   return this.matches == 8
 };
 
+Board.prototype.count = function() {
+  return this.deck.length;
+}
+
 Board.prototype.getStarRating = function() {
   let rating = 1;
   if (this.moves <= 12) {

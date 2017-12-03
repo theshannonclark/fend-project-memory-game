@@ -14,12 +14,13 @@ let BoardView = function(model) {
   this.model = model;
 };
 
-BoardView.prototype.render = function(deck) {
+BoardView.prototype.render = function() {
   // Remove existing cards from board
   this.clearBoard();
   // Create element for each card in deck
   let cards = '';
-  for (let index = 0; index < deck.length; index++) {
+  let deckLength = this.model.count();
+  for (let index = 0; index < deckLength; index++) {
     cards += `${this.createCardElement(index)}\n`;
   }
   // Attach cards to DOM

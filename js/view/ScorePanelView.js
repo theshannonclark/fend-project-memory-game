@@ -15,8 +15,8 @@ let ScorePanelView = function(model) {
   this.model = model;
 };
 
-ScorePanelView.prototype.render = function(moves) {
-  this.$moves.text(moves);
+ScorePanelView.prototype.render = function() {
+  this.$moves.text(this.model.getMoves());
 
   this.clearStars();
   let rating = this.model.getStarRating();

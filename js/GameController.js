@@ -20,7 +20,7 @@ let GameController = function() {
     let affectedCardsIndices = controllerThis.board.flip(cardIndex);
 
     controllerThis.boardView.updateCards(affectedCardsIndices);
-    controllerThis.scorePanelView.render(controllerThis.board.moves);
+    controllerThis.scorePanelView.render();
 
     if (controllerThis.board.won()) {
       controllerThis.winModalView.show();
@@ -48,6 +48,6 @@ GameController.prototype.initialize = function() {
   this.winModalView = new WinModalView(this.board);
 
   // Render game board
-  this.boardView.render(this.board.deck);
-  this.scorePanelView.render(this.board.moves);
+  this.boardView.render();
+  this.scorePanelView.render();
 };
