@@ -19,6 +19,7 @@ let GameController = function() {
     let cardIndex = event.target.dataset.index;
     let affectedCardsIndices = controllerThis.board.flip(cardIndex);
     controllerThis.boardView.updateCards(affectedCardsIndices);
+    controllerThis.scorePanelView.render(controllerThis.board.moves);
   });
 
   const $restart = $('.restart');
@@ -32,7 +33,9 @@ GameController.prototype.initialize = function() {
   // Instance variables
   this.board = new Board();
   this.boardView = new BoardView(this.board);
+  this.scorePanelView = new ScorePanelView(this.board);
 
   // Render game board
   this.boardView.render(this.board.deck);
+  this.scorePanelView.render(this.board.moves);
 };

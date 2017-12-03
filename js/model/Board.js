@@ -48,8 +48,9 @@ Board.prototype.flip = function(index) {
     }
     result = this.flipped;
     this.flipped = [];
+
+    this.moves++;
   }
-  this.moves++;
 
   return result;
 };
