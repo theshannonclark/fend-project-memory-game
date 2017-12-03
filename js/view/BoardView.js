@@ -18,8 +18,8 @@ BoardView.prototype.render = function(deck) {
   this.clearBoard();
   // Create element for each card in deck
   let cards = '';
-  for (let card of deck) {
-    cards += `${this.createCardElement(card)}\n`;
+  for (let index = 0; index < deck.length; index++) {
+    cards += `${this.createCardElement(deck[index], index)}\n`;
   }
   // Attach cards to DOM
   this.$board.append(cards);
@@ -29,9 +29,9 @@ BoardView.prototype.clearBoard = function() {
   this.$board.children().remove();
 };
 
-BoardView.prototype.createCardElement = function(face) {
+BoardView.prototype.createCardElement = function(face, index) {
   let element = 
-`<li class="card">
+`<li class="card" data-index="${index}">
   <i class="fa ${face}"></i>
 </li>`;
 
