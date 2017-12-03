@@ -107,3 +107,43 @@ h1 {
   float: right;
   cursor: pointer;
 }
+
+/*
+ * Styles for the congratulations popup modal
+ */
+
+.win-modal {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  text-align: center;
+}
+
+.win-modal .check-mark {
+  font-size: 5em;
+  font-weight: 100;
+  border: 1px solid #BADDA8;
+  border-radius: 50%;
+  margin: 0;
+  color: #ABE792;;
+  width: 1.5em;
+}
+
+.continue-button {
+  background-color: #0FCEA6;
+  text-decoration: none;
+  color: white;
+  padding: 0.5em 2em;
+  border-radius: 5%;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

@@ -15,6 +15,7 @@ $.getScript('js/model/Board.js');
 $.getScript('js/model/Card.js');
 $.getScript('js/view/BoardView.js');
 $.getScript('js/view/ScorePanelView.js');
+$.getScript('js/view/WinModalView.js');
 $.getScript('js/utils.js');
 $.getScript('js/GameController.js')
   .done(function() {

@@ -69,6 +69,10 @@ Board.prototype.getStarRating = function() {
   return rating;
 }
 
+Board.prototype.getMoves = function(index) {
+  return this.moves;
+};
+
 Board.prototype.getCardFace = function(index) {
   return this.deck[index].face;
 };
