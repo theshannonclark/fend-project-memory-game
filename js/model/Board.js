@@ -56,7 +56,7 @@ Board.prototype.flip = function(index) {
 };
 
 Board.prototype.won = function() {
-  return this.matches.length == 8
+  return this.matches == 8
 };
 
 Board.prototype.getStarRating = function() {
