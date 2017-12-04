@@ -5,14 +5,16 @@
 /**
  * @description Represents a game board
  * @constructor
+ * @param {Object} controller - Reference to the GameController object
  */
 
-let Board = function() {
+let Board = function(controller) {
   // Instance variables
   this.moves = 0;
   this.createDeck();
   this.flipped = [];
   this.matches = 0;
+  this.controller = controller;
 };
 
 Board.prototype.createDeck = function() {
@@ -32,8 +34,6 @@ Board.prototype.createDeck = function() {
 };
 
 Board.prototype.flip = function(index) {
-  let result = [index];
-
   this.deck[index].flipped = true;
   this.flipped.push(index);
 
@@ -43,16 +43,15 @@ Board.prototype.flip = function(index) {
       this.deck[this.flipped[0]].matched = true;
       this.deck[this.flipped[1]].matched = true;
     } else {
-      this.deck[this.flipped[0]].flipped = false;
-      this.deck[this.flipped[1]].flipped = false;
+      window.setTimeout(handleMismatchedCards.bind(this), 1000, this.flipped);
     }
-    result = this.flipped;
+    this.controller.updateCardView(this.flipped);
     this.flipped = [];
 
     this.moves++;
+  } else {
+    this.controller.updateCardView(this.flipped);
   }
-
-  return result;
 };
 
 Board.prototype.won = function() {
@@ -88,3 +87,10 @@ Board.prototype.cardFlipped = function(index) {
 Board.prototype.cardMatched = function(index) {
   return this.deck[index].matched;
 };
+
+function handleMismatchedCards(indices) {
+  this.deck[indices[0]].flipped = false;
+  this.deck[indices[1]].flipped = false;
+
+  this.controller.updateCardView(indices);
+}
