@@ -47,7 +47,7 @@ BoardView.prototype.updateCards = function(indices) {
 };
 
 BoardView.prototype.updateCard = function(index) {
-  let $cardElement = this.$board.children('.card:eq(' + index + ')');
+  let $cardElement = this.$board.children(`[data-index=${index}]`);
 
   $cardElement.removeClass();
   $cardElement.addClass('card');
