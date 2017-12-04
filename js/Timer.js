@@ -29,8 +29,8 @@ Timer.prototype.clearTimer = function() {
 };
 
 function humanTime(milliseconds) {
-  let millisecondsPerSecond = 1000;
-  let millisecondsPerMinute = millisecondsPerSecond * 60;
+  const millisecondsPerSecond = 1000;
+  const millisecondsPerMinute = millisecondsPerSecond * 60;
 
   let minutes = Math.floor(milliseconds / millisecondsPerMinute);
   let seconds = Math.floor((milliseconds % millisecondsPerMinute) / millisecondsPerSecond);
