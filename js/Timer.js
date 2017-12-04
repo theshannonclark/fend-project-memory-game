@@ -3,7 +3,7 @@
  */
 
 /**
- * @description Used to keep track of plating time
+ * @description Used to keep track of playing time
  * @constructor
  */
 
