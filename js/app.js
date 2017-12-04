@@ -17,6 +17,7 @@ $.getScript('js/view/BoardView.js');
 $.getScript('js/view/ScorePanelView.js');
 $.getScript('js/view/WinModalView.js');
 $.getScript('js/utils.js');
+$.getScript('js/Timer.js');
 $.getScript('js/GameController.js')
   .done(function() {
     let gameController = new GameController();

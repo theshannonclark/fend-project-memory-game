@@ -12,6 +12,7 @@ let ScorePanelView = function(model) {
   // Instance variables
   this.$moves = $('.moves');
   this.$stars = $('.stars');
+  this.$timer = $('.timer');
   this.model = model;
 };
 
@@ -23,6 +24,10 @@ ScorePanelView.prototype.render = function() {
   let stars = this.getStars(rating);
   this.$stars.append(stars);
 };
+
+ScorePanelView.prototype.updateTimer = function(time) {
+  this.$timer.text(time);
+}
 
 ScorePanelView.prototype.clearStars = function() {
   this.$stars.children().remove();
