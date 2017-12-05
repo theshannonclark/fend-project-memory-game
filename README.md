@@ -1,20 +1,26 @@
-# Memory Game Project
+# Project: Tournament Results - Shannon Clark
 
-## Table of Contents
+This is a project developed as part of Udacity's [Front End Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001). The aim of this project is to  build a complete browser-based card matching game (also known as [Concentration](https://en.wikipedia.org/wiki/Swiss-system_tournament)).
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+##How The Game Works
 
-## Instructions
+The game board consists of sixteen "cards" arranged in a grid. The deck is made up of eight different pairs of cards, each with different symbols on one side. The cards are arranged randomly on the grid with the symbol face down. The gameplay rules are very simple: flip over two hidden cards at a time to locate the ones that match!
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+Each turn:
 
-To get started, open `js/app.js` and start building out the app's functionality
++ The player flips one card over to reveal its underlying symbol.
++ The player then turns over a second card, trying to find the corresponding card with the same symbol.
++ If the cards match, both cards stay flipped over.
++ If the cards do not match, both cards are flipped face down.
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+The game ends once all cards have been correctly matched.
 
-## Contributing
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+## Getting Started
+Download the project by cloning the git repository:
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+```
+git clone https://github.com/theshannonclark/fend-project-memory-game.git memory-game
+```
+
+Then open index.html in your web browser.
