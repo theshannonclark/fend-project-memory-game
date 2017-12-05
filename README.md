@@ -1,8 +1,8 @@
-# Project: Tournament Results - Shannon Clark
+# Project: Memory Game - Shannon Clark
 
-This is a project developed as part of Udacity's [Front End Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001). The aim of this project is to  build a complete browser-based card matching game (also known as [Concentration](https://en.wikipedia.org/wiki/Swiss-system_tournament)).
+This is a project developed as part of Udacity's [Front End Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001). The aim of this project is to  build a complete browser-based card matching game (also known as [Concentration](https://en.wikipedia.org/wiki/Concentration_(game))).
 
-##How The Game Works
+## How The Game Works
 
 The game board consists of sixteen "cards" arranged in a grid. The deck is made up of eight different pairs of cards, each with different symbols on one side. The cards are arranged randomly on the grid with the symbol face down. The gameplay rules are very simple: flip over two hidden cards at a time to locate the ones that match!
 
