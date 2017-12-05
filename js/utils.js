@@ -2,8 +2,13 @@
  * Utils.js -- Miscellaneous utility functions
  */
 
-// Shuffle function from http://stackoverflow.com/a/2450976
+/**
+ * @description Shuffles an array in-place
+ * @param {Array} array
+ * @returns {Array} The shuffled array (for some reason)
+ */
 function shuffle(array) {
+  // From http://stackoverflow.com/a/2450976
   var currentIndex = array.length, temporaryValue, randomIndex;
 
   while (currentIndex !== 0) {
