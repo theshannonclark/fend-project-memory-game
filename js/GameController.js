@@ -21,10 +21,13 @@ let GameController = function() {
     controllerThis.scorePanelView.render();
 
     if (controllerThis.board.won()) {
+      controllerThis.timer.clearTimer();
       let elapsed = controllerThis.elapsedTime;
       controllerThis.winModalView.updateTimer(elapsed);
 
-      controllerThis.winModalView.show();
+      window.setTimeout(function() {
+        controllerThis.winModalView.show();
+      }, 1000);
     }
   });
 

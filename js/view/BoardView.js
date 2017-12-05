@@ -56,5 +56,7 @@ BoardView.prototype.updateCard = function(index) {
     $cardElement.addClass('match');
   } else if (this.model.cardFlipped(index)) {
     $cardElement.addClass('open show');
+  } else if (this.model.cardMismatched(index)) {
+    $cardElement.addClass('mismatch');
   }
 };

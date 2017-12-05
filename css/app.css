@@ -46,6 +46,45 @@ h1 {
   }
 }
 
+@keyframes match-card {
+  from {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 0.8);
+  }
+  60% {
+    transform: scale(0.8, 1.2);
+  }
+  70% {
+    transform: scale(1.1, 0.9);
+  }
+  80% {
+    transform: scale(0.95, 1.05);
+  }
+  90% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes mismatch-card {
+  from {
+    transform: rotate(-10deg);
+  }
+  25% {
+    transform: translate(-30px) rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: translate(30px) rotate(10deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+
 /*
  * Styles for the deck of cards
  */
@@ -91,7 +130,15 @@ h1 {
 
 .deck .card.match {
   cursor: default;
+  animation: 1s match-card;
   background: #02ccba;
+  font-size: 33px;
+}
+
+.deck .card.mismatch {
+  cursor: default;
+  animation: 0.25s mismatch-card;
+  background: #EA4D3E;
   font-size: 33px;
 }
 

@@ -25,8 +25,8 @@ Board.prototype.createDeck = function() {
 
   this.deck = [];
   for (let face of faces) {
-    let card1 = {face: face, flipped: false, matched: false};
-    let card2 = {face: face, flipped: false, matched: false};
+    let card1 = {face: face, flipped: false, matched: false, mismatched: false};
+    let card2 = {face: face, flipped: false, matched: false, mismatched: false};
 
     this.deck.push(card1, card2);
   }
@@ -43,7 +43,8 @@ Board.prototype.flip = function(index) {
       this.deck[this.flipped[0]].matched = true;
       this.deck[this.flipped[1]].matched = true;
     } else {
-      window.setTimeout(handleMismatchedCards.bind(this), 1000, this.flipped);
+      mismatchCards.call(this, this.flipped);
+      window.setTimeout(unMismatchCards.bind(this), 1000, this.flipped);
     }
     this.controller.updateCardView(this.flipped);
     this.flipped = [];
@@ -88,9 +89,21 @@ Board.prototype.cardMatched = function(index) {
   return this.deck[index].matched;
 };
 
-function handleMismatchedCards(indices) {
-  this.deck[indices[0]].flipped = false;
-  this.deck[indices[1]].flipped = false;
+Board.prototype.cardMismatched = function(index) {
+  return this.deck[index].mismatched;
+}
 
+function mismatchCards(indices) {
+  for (let index of indices) {
+    this.deck[index].flipped = false;
+    this.deck[index].mismatched = true;
+  }
+  this.controller.updateCardView(indices);
+}
+
+function unMismatchCards(indices) {
+  for (let index of indices) {
+    this.deck[index].mismatched = false;
+  }
   this.controller.updateCardView(indices);
 }
