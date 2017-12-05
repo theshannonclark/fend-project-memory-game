@@ -212,3 +212,38 @@ h1 {
   -ms-user-select: none;
   user-select: none;
 }
+
+/*
+ * Responsive styles
+ */
+
+@media screen and (max-width: 680px) {
+  .deck {
+    width: 480px;
+    min-height: initial;
+    justify-content: center;
+    padding: 32px 0;
+  }
+  .deck .card {
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .deck {
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .deck {
+    width: 100%;
+    border-radius: initial;
+  }
+  .score-panel {
+    width: 300px;
+  }
+  .score-panel .timer {
+    margin-left: 2em;
+  }
+}
