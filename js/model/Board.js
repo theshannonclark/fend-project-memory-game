@@ -13,6 +13,7 @@ let Board = function(controller) {
   this.flipped = [];
   this.matches = 0;
   this.controller = controller;
+  this.preventFlip = false;
 
   this.createDeck();
 };
@@ -41,6 +42,9 @@ Board.prototype.createDeck = function() {
  * @param {number} index - The position of the card in the deck to flip
  */
 Board.prototype.flip = function(index) {
+  // Don't show more than 2 cards at once
+  if (this.preventFlip) return;
+
   // Flip the card, add its index to array of flipped cards
   this.deck[index].flipped = true;
   this.flipped.push(index);
@@ -57,6 +61,8 @@ Board.prototype.flip = function(index) {
       // Play the matched card animation
       this.controller.updateCardView(this.flipped);
     } else { // if it doesn't match...
+      // Don't let any other cards be flipped
+      this.preventFlip = true;
       // play mismatched animation for 1 second
       mismatchCards.call(this, this.flipped);
       window.setTimeout(unMismatchCards.bind(this), 1000, this.flipped);
@@ -159,4 +165,6 @@ function unMismatchCards(indices) {
     this.deck[index].mismatched = false;
   }
   this.controller.updateCardView(indices);
+  // Allow other cards to be flipped again
+  this.preventFlip = false;
 }
