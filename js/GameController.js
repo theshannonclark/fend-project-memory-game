@@ -16,6 +16,9 @@ let GameController = function() {
   // When the player clicks on a non-flipped card...
   const $deck = $('.deck');
   $deck.on('click', 'li:not(.match):not(.open)', function(event) {
+    // Set up the timer when the player clicks on the first card
+    controllerThis.createTimer();
+
     // flip the card
     let cardIndex = event.target.dataset.index;
     controllerThis.board.flip(cardIndex);
@@ -61,10 +64,6 @@ GameController.prototype.initialize = function() {
   this.scorePanelView = new ScorePanelView(this.board);
   this.winModalView = new WinModalView(this.board);
 
-  // Set up the timer
-  this.timer = new Timer();
-  this.timer.initializeTimer(tick, this);
-
   // Render game board
   this.boardView.render();
   this.scorePanelView.render();
@@ -76,7 +75,18 @@ GameController.prototype.initialize = function() {
 GameController.prototype.reset = function() {
   this.scorePanelView.updateTimer('00:00');
   this.timer.clearTimer();
+  this.timer = undefined;
   this.initialize();
+};
+
+/**
+ * @description Creates a timer and runs it
+ */
+GameController.prototype.createTimer = function () {
+  if (this.timer === undefined) {
+    this.timer = new Timer();
+    this.timer.initializeTimer(tick, this);
+  }
 };
 
 /**
